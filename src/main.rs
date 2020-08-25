@@ -1,16 +1,18 @@
-extern crate rspotify;
+extern crate librespot;
+extern crate tokio;
 
-use rspotify::client::Spotify;
-use rspotify::oauth2::SpotifyClientCredentials;
-use rspotify::senum::Country;
+use tokio_core::reactor::Core;
+use librespot::core::config::SessionConfig;
 
-fn main() {
-    //println!("Hello, world!");
-    let client_credential = SpotifyClientCredentials::default().build();
 
-    let spotify = Spotify::default()
-        .client_credentials_manager(client_credential)
-        .build();
+#[tokio::main]
+async fn main() {
+    std::env::env_logger::init();
+    let mut core = Core::new().unwrap();
 
-    println!("{:?}", spotify);
+    let session_config = SessionConfig::Default();
+
+
+
+    println!("{:?}", session_config);
 }

@@ -7,5 +7,7 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rspotify = "0.10.0"
-
+#rspotify = "0.10.0"
+librespot = "0.1.3"
+tokio = { version = "0.2.22", features = ["full"] }
+itunesdb = { git = "https://github.com/stuffandahalf/itunesdb-rs" }
